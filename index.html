@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Explorer</title>
+<meta name="description" content="Discover GitHub profiles, compare repositories, and battle developer stats instantly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1 class="gradient-text">GitHub Explorer</h1>
+            <p>Discover profiles, compare repositories, and battle developer stats.</p>
+            <button id="toggle-battle-btn" class="toggle-btn">Enter Battle Mode ⚔️</button>
+        </header>
+
+        <main>
+            <div class="search-container glass-panel">
+                <input type="text" id="search-input" placeholder="Search GitHub username..." autocomplete="off" aria-label="GitHub username">
+                <input type="text" id="search-input-2" class="hidden" placeholder="Player 2 username..." autocomplete="off" aria-label="Second GitHub username">
+                <button id="search-btn">Search</button>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="error-message" class="hidden error-panel"></div>
+
+            <div id="profile-container" class="hidden">
+                <section class="profile-card glass-panel">
+                    <img id="user-avatar" src="" alt="" class="avatar">
+                    <div class="profile-info">
+                        <h2 id="user-name"></h2>
+                        <a id="user-login" target="_blank" rel="noopener noreferrer"></a>
+                        <p id="user-joined" class="join-date"></p>
+                        <a id="user-portfolio" target="_blank" rel="noopener noreferrer" class="portfolio-link hidden"></a>
+                        <p id="user-bio"></p>
+                        <div class="stats">
+                            <div class="stat"><span id="user-followers"></span> Followers</div>
+                            <div class="stat"><span id="user-following"></span> Following</div>
+                            <div class="stat"><span id="user-repos"></span> Repos</div>
+                        </div>
+                    </div>
+                </section>
+
+                <h3 class="section-title">Latest Repositories</h3>
+                <section id="repos-grid" class="repos-grid"></section>
+            </div>
+
+            <div id="battle-container" class="hidden battle-container"></div>
+        </main>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
