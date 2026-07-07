@@ -15,23 +15,23 @@
         <header>
             <h1 class="gradient-text">GitHub Explorer</h1>
             <p>Discover profiles, compare repositories, and battle developer stats.</p>
-            <button id="toggle-battle-btn" class="toggle-btn">Enter Battle Mode ⚔️</button>
+            <button type="button" id="toggle-battle-btn" class="toggle-btn">Enter Battle Mode ⚔️</button>
         </header>
 
         <main>
             <div class="search-container glass-panel">
                 <input type="text" id="search-input" placeholder="Search GitHub username..." autocomplete="off" aria-label="GitHub username">
                 <input type="text" id="search-input-2" class="hidden" placeholder="Player 2 username..." autocomplete="off" aria-label="Second GitHub username">
-                <button id="search-btn">Search</button>
+                <button type="button" id="search-btn">Search</button>
             </div>
 
-            <div id="loading" class="hidden">
+            <div id="loading" class="hidden" aria-live="polite">
                 <div class="spinner"></div>
             </div>
 
-            <div id="error-message" class="hidden error-panel"></div>
+            <div id="error-message" class="hidden error-panel" role="alert"></div>
 
-            <div id="profile-container" class="hidden">
+            <div id="profile-container" class="hidden" aria-live="polite">
                 <section class="profile-card glass-panel">
                     <img id="user-avatar" src="" alt="" class="avatar">
                     <div class="profile-info">
@@ -52,7 +52,7 @@
                 <section id="repos-grid" class="repos-grid"></section>
             </div>
 
-            <div id="battle-container" class="hidden battle-container"></div>
+            <div id="battle-container" class="hidden battle-container" aria-live="polite"></div>
         </main>
     </div>
     <script src="./app.js"></script>
